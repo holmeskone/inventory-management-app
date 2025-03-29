@@ -1,18 +1,19 @@
-import item from "../item.js"
+import data from "../models/item.js";
 
-async function getItems(req, res) {
-  res.render("index", { items: item.items });
-  // try {
-  //   const { brand } = req.params;
-  //   const items = await item.getBrand(brand);
-  //   if (!items) {
-  //     return res.status(404).json({ message: "Item not found" });
-  //   }
-  //   res.send(items);
-  //   res.render("index");
-  // } catch (error) {
-  //   res.status(500).json({ message: error.message });
-  // }
+const items = data.items;
+
+function getItems(req, res) {
+  res.render("index", { items: items });
 }
 
-export { getItems };
+function getItemById(req, res) {
+  const id = req.params.id;
+  console.log(id)
+  const item = items.find((item) => item.size === id);
+  console.log(item)
+  if (item) {
+    res.render("itemView", { item: item });
+  } else {
+    console.log("Item not found");
+  }}
+export { getItems, getItemById };

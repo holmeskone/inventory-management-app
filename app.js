@@ -1,5 +1,6 @@
 import express from "express";
 import itemRouter from "./routes/itemRouter.js";
+import categoryRouter from "./routes/categoryRouter.js";
 import path from "path";
 
 import { fileURLToPath } from "url";
@@ -11,7 +12,7 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.json());
 app.use("/", itemRouter);
-app.use("/items", itemRouter);
+app.use("/category", categoryRouter);
 // app.use("/categories", categoryRouter);
 
 const PORT = 3000;
