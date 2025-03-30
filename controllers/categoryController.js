@@ -2,21 +2,18 @@ import data from "../models/item.js";
 
 const categories = data.items;
 
-const uniqueCategories = [...new Set(categories.map(item => item.type))];
-  console.log(uniqueCategories);
+
+function getAllCategories(req, res) {
+    // const categories = data.items;
+    console.log("All Categories:", categories);
+    res.render("categoryView", { category: categories });
+  }
 
 function getCategories(req, res) {
-  res.render("categoryView", { category: uniqueCategories });
-}
+    const categoryType = req.params.type; // Get type from URL
+    console.log("Category Type:", categoryType);
+    const filteredCategories = [...new Set(categories.filter(item => item.type === categoryType))];
+    res.render("categoryView", { category: filteredCategories });
+  }
 
-// function getItemById(req, res) {
-//   const id = req.params.id;
-//   console.log(id)
-//   const item = items.find((item) => item.size === id);
-//   console.log(item)
-//   if (item) {
-//     res.render("itemView", { item: item });
-//   } else {
-//     console.log("Item not found");
-//   }}
-export { getCategories };
+export { getAllCategories, getCategories };

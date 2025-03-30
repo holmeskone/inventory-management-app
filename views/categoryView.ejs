@@ -3,7 +3,11 @@
 <h1>hello world</h1>
     <% for (let i = 0; i < category.length; i++) { %>
         <ul>
-            <li> <%= category[i]%> </li>  
+            <li> <%= category[i].category.charAt(0).toUpperCase() + category[i].category.slice(1) %>  </li>  
+            <li> <%= category[i].type.charAt(0).toUpperCase() + category[i].type.slice(1)%>  </li>  
+            <li> <%= category[i].brand.charAt(0).toUpperCase() + category[i].brand.slice(1) %>  </li>  
+            <li> <%= category[i].color.charAt(0).toUpperCase() + category[i].color.slice(1) %>  </li>  
+            <li> <%= category[i].size.charAt(0).toUpperCase() + category[i].size.slice(1) %>  </li>  
         </ul>
         <% } %> 
 </body>

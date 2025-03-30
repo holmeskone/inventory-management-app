@@ -3,15 +3,17 @@
 <h1>hello world</h1>
 <% for (let i = 0; i < items.length; i++) { %>
     <ul>
-        <li> <%= items[i].category %> </li>      
-        <li> <%= items[i].type %> </li>  
-        <li> <%= items[i].brand %> </li>  
-        <li> <%= items[i].color %> </li>  
-        <li> <%= items[i].size %> </li>
+        <li> <%= items[i].category.charAt(0).toUpperCase() + items[i].category.slice(1) %> </li>      
+        <li> <%= items[i].type.charAt(0).toUpperCase() + items[i].type.slice(1) %> </li>  
+        <li> <%= items[i].brand.charAt(0).toUpperCase() + items[i].brand.slice(1) %> </li>  
+        <li> <%= items[i].color.charAt(0).toUpperCase() + items[i].color.slice(1) %> </li>  
+        <li> <%= items[i].size.charAt(0).toUpperCase() + items[i].size.slice(1) %> </li>
         <li><a href="/items/<%= items[i].size %>">View item details</a></li>
-        <li><a href="/category %>">View Categories</a></li>
-
+        <li><a href="/categories/<%= items[i].type %>">View Category</a></li>
+        <li><a href="/update/<%= items[i].id %>">Update</a></li>        
     </ul>
     <% } %>
+    <a href="/categories">View all categories</a>
+    <a href="/add">Add item</a>
 </body>
 </html>

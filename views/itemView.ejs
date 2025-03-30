@@ -2,11 +2,11 @@
 <body>
 <h1>hello world</h1>
     <ul>
-        <li> <%= item.category %> </li>      
-        <li> <%= item.type %> </li>  
-        <li> <%= item.brand %> </li>  
-        <li> <%= item.color %> </li>  
-        <li> <%= item.size %> </li>
+        <li> <%= item.category.charAt(0).toUpperCase() + item.category.slice(1) %> </li>      
+        <li> <%= item.type.charAt(0).toUpperCase() + item.type.slice(1) %> </li>  
+        <li> <%= item.brand.charAt(0).toUpperCase() + item.brand.slice(1) %> </li>  
+        <li> <%= item.color.charAt(0).toUpperCase() + item.color.slice(1) %> </li>  
+        <li> <%= item.size.charAt(0).toUpperCase() + item.size.slice(1) %> </li>
     </ul>
 </body>
 </html>

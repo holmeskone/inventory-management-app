@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Item</title>
+</head>
+<body>
+    <h1>Update Item</h1>
+    <form action="/update/<%= item.id %>" method="POST">
+      <label for="category">Category:</label>
+      <input type="text" id="category" name="category" value="<%= item.category %>" required>
+  
+      <label for="type">Type:</label>
+      <input type="text" id="type" name="type" value="<%= item.type %>">
+  
+      <label for="brand">Brand:</label>
+      <input type="text" id="brand" name="brand" value="<%= item.brand %>">
+  
+      <label for="color">Color:</label>
+      <input type="text" id="color" name="color" value="<%= item.color %>">
+  
+      <label for="size">Size:</label>
+      <input type="text" id="size" name="size" value="<%= item.size %>">
+  
+      <button type="submit">Update Item</button>
+    </form>
+</body>
+</html>
